@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load sass_tags %}
+
+{% block includes %}
+    <link rel="stylesheet" type="text/css" href="{% sass_src "css/details.sass" %}">
+{% endblock includes %}
+
+{% block content %}
+    <div class="profile">
+        <ul class="profile_general_info">
+            <li class="profile_user_name">
+                <div class="profile_field">{{ object.first_name }} {{ object.second_name }}</div>
+            </li>
+            <li>
+                <div class="profile_field_email">{{ object.email }}</div>
+            </li>
+            <li>
+                <div class="profile_field_name">Joined: </div>
+                <div class="profile_field">{{ object.date_joined }}</div>
+            </li>
+        </ul>
+    </div>
+    <ul>
+        {% for val in object.created_courses.all %}
+            <li><a href="/course/{{ val.id }}">
+                {{ val.name }}
+            </a></li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

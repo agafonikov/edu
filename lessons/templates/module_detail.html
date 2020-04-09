@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load sass_tags %}
+
+{% block includes %}
+    <link rel="stylesheet" type="text/css" href="{% sass_src "css/details.sass" %}">
+{% endblock includes %}
+
+{% block content %}
+    {{ object.name }}
+    {{ object.creator }}
+    <a href="/course/{{ object.course.id }}/module/{{ object.id }}/lesson/create/">
+        Add new lesson
+    </a>
+    <ul>
+        {% for lesson in object.lessons.all|dictsort:"priority" %}
+            <li>
+                <a href="/course/{{ object.course.id }}/module/{{ object.id }}/lesson/{{ lesson.id }}">
+                    {{ lesson.name }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

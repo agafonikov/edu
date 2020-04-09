@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p> Courses </p>
+    <ul>
+    {% for course in object_list %}
+        <li>
+            {{ course.name }}
+            <img src="
+                {% if course.icon %}
+                    {% static course.icon.url %}
+                {% else %}
+                    {% static 'images/archive.png'%}
+                {% endif %}
+                "
+                 width="50px"
+            >
+            {{ course.creator.email }}
+        </li>
+    {% empty %}
+        No users
+    {% endfor %}
+    </ul>
+{% endblock content %}

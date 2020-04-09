@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% load sass_tags %}
+{% block includes %}
+    <link rel="stylesheet" type="text/css" href="{% sass_src "css/course_list.sass" %}">
+{% endblock includes %}
+{% block content %}
+<p> Course List </p>
+    <ul class="course_list_container">
+    {% for course in object_list %}
+        <li>
+        <a href="/course/{{ course.id }}">
+            <div class="course_name">{{ course.name }}</div>
+            <img src="
+                {% if course.icon %}
+                    {% static course.icon.url %}
+                {% else %}
+                    {% static 'images/archive.png'%}
+                {% endif %}
+                "
+                 width="50px"
+            >
+            <div class="created_by">{{ course.creator.email }}</div>
+        </a>
+        </li>
+    {% empty %}
+        No users
+    {% endfor %}
+    </ul>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load sass_tags %}
+
+{% block includes %}
+    <link rel="stylesheet" type="text/css" href="{% sass_src "css/details.sass" %}">
+{% endblock includes %}
+
+{% block content %}
+    {{ object.name }}
+    {{ object.creator }}
+    <a href="/course/{{ object.id }}/module/create">
+        Create new module
+    </a>
+    <ul>
+    {% for module in object.modules.all|dictsort:"priority" %}
+        <li>
+            <a href="/course/{{ object.id }}/module/{{ module.id }}/">
+                {{ module.name }}
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock content %}

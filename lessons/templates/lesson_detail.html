@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load sass_tags %}
+
+{% block includes %}
+    <link rel="stylesheet" type="text/css" href="{% sass_src "css/details.sass" %}">
+{% endblock includes %}
+
+{% block content %}
+    {{ object.name }}
+    {{ object.description }}
+    {{ object.presentation_link }}
+{% endblock content %}

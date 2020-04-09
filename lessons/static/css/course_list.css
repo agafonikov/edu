@@ -1,0 +1,25 @@
+.course_list_container {
+  position: relative;
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap; }
+  .course_list_container li {
+    flex-basis: 30%;
+    border: #ddd 1px solid; }
+    .course_list_container li a {
+      display: block; }
+      .course_list_container li a .created_by {
+        margin: .5em;
+        text-align: center; }
+      .course_list_container li a img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 10em; }
+      .course_list_container li a .created_by {
+        margin: .5em;
+        text-align: right; }
+
+/*# sourceMappingURL=course_list.css.map */

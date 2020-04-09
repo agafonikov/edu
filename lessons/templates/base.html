@@ -1,0 +1,27 @@
+{% load static %}
+{% load sass_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Site Page</title>
+    <link rel="stylesheet" type="text/css" href="{% sass_src "css/base.sass" %}">
+    {% block includes %}
+    {% endblock includes %}
+</head>
+<body>
+<header>
+{% if user.is_authenticated %}
+    <a href="/profile/{{ user.id }}/">
+        {{ user.email }}
+    </a>
+{% else %}
+    Log in
+{% endif %}
+</header>
+<main>
+{% block content %}
+{% endblock content %}
+</main>
+</body>
+</html>
