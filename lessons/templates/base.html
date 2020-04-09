@@ -15,8 +15,13 @@
     <a href="/profile/{{ user.id }}/">
         {{ user.email }}
     </a>
+    <a href="/logout/">
+        Log Out
+    </a>
 {% else %}
+    <a href="/signin/">
     Log in
+    </a>
 {% endif %}
 </header>
 <main>

@@ -3,10 +3,18 @@
 
 {% block includes %}
     <link rel="stylesheet" type="text/css" href="{% sass_src "css/details.sass" %}">
+    <link rel="stylesheet" type="text/css" href="{% sass_src "css/lesson.sass" %}">
 {% endblock includes %}
 
 {% block content %}
     {{ object.name }}
     {{ object.description }}
-    {{ object.presentation_link }}
+    <div class="lesson_frames">
+    <iframe class="lesson_presentation" src="{{ object.presentation_link }}">
+
+    </iframe>
+    <iframe class="lesson_lesson" src="{{ object.lesson_link }}">
+
+    </iframe>
+    </div>
 {% endblock content %}

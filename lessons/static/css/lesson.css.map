@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "lesson.css",
+	"sources": [
+		"lesson.sass"
+	],
+	"names": [],
+	"mappings": "AAAA,AAAA,cAAc,CAAC;EACb,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM,GAAG;;AAE3B,AAAA,oBAAoB,CAAC;EACnB,UAAU,EAAE,KAAK;EACjB,aAAa,EAAE,GAAG,GAAG;;AAEvB,AAAA,cAAc,CAAC;EACb,UAAU,EAAE,KAAK,GAAG"
+}

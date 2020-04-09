@@ -20,6 +20,9 @@
             </li>
         </ul>
     </div>
+    <a href="/course/create/">
+        Create new course
+    </a>
     <ul>
         {% for val in object.created_courses.all %}
             <li><a href="/course/{{ val.id }}">
